@@ -16,11 +16,6 @@ val Typography = Typography(
         fontSize = 16.sp
     ),
     h3 = TextStyle(
-        fontFamily = FontFamily(
-            listOf(
-                Font(R.font.informc)
-            )
-        ),
         fontWeight = FontWeight.Normal,
         fontSize = 56.sp,
         letterSpacing = 0.sp
