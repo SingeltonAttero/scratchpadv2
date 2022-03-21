@@ -3,7 +3,7 @@ object Versions {
 
     object Tools {
         val android_gradle by lazy { "7.1.2" }
-        val kotlin by lazy { "1.5.31" }
+        val kotlin by lazy { "1.6.10" }
         val hilt by lazy { "2.38.1" }
     }
 
@@ -15,7 +15,7 @@ object Versions {
         val desugar_jdk_libs by lazy { "1.1.5" }
 
         // compose
-        val compose by lazy { "1.0.5" }
+        val compose by lazy { "1.1.1" }
         val navigationCompose by lazy { "2.5.0-alpha03" }
         val lifecycleRuntime by lazy { "2.4.1" }
         val activityCompose by lazy { "1.4.0" }
