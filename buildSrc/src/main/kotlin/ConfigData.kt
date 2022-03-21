@@ -1,7 +1,7 @@
 object ConfigData {
-    const val compileSdkVersion = 31
-    const val minSdkVersion = 23
-    const val targetSdkVersion = 31
-    const val versionCode = 1
-    const val versionName = "1.0"
+    const val COMPILE_SDK_VERSION = 31
+    const val MIN_SDK_VERSION = 23
+    const val TARGET_SDK_VERSION = 31
+    const val VERSION_CODE = 1
+    const val VERSION_NAME = "1.0"
 }
