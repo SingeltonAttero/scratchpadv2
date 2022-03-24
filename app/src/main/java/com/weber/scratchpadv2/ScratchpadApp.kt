@@ -9,5 +9,4 @@ class ScratchpadApp : Application() {
     override fun onCreate() {
         super.onCreate()
     }
-
 }
