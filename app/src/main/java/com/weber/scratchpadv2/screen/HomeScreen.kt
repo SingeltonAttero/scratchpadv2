@@ -6,7 +6,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.weber.scratchpadv2.R
+import com.weber.scratchpadv2.ScreenDestinations
 import com.weber.scratchpadv2.components.HomeButton
 import com.weber.scratchpadv2.components.TitleStartApp
 
@@ -17,12 +19,14 @@ import com.weber.scratchpadv2.components.TitleStartApp
  */
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(modifier = Modifier.size(1.dp, 80.dp))
             TitleStartApp(modifier = Modifier.padding(bottom = 40.dp))
-            HomeButton(title = stringResource(R.string.start))
+            HomeButton(title = stringResource(R.string.start)) {
+                navController.navigate(ScreenDestinations.PrepareGameSessionScreen.name)
+            }
             HomeButton(title = stringResource(R.string.setting))
         }
     }

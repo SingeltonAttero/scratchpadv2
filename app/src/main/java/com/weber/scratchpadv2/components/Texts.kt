@@ -12,7 +12,7 @@ import com.weber.scratchpadv2.R
 
 @Composable
 fun TitleStartApp(modifier: Modifier, title: String = stringResource(id = R.string.app_name)) {
-    val colorSchemes = listOf<Color>(
+    val colorSchemes = listOf(
         Color(0xFFF48FB1),
         Color(0xFFFF8F00),
         Color(0xFFFFC400),
