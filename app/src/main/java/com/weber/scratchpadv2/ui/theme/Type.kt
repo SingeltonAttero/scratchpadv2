@@ -26,5 +26,11 @@ val Typography = Typography(
         color = AppButtonTextColor,
         fontSize = 56.sp,
         letterSpacing = 0.sp
+    ),
+    h6 = TextStyle(
+        fontWeight = FontWeight.Normal,
+        color = AppButtonTextColor,
+        fontSize = 36.sp,
+        letterSpacing = 0.sp
     )
 )

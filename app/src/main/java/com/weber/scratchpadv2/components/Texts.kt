@@ -27,6 +27,5 @@ fun TitleStartApp(modifier: Modifier, title: String = stringResource(id = R.stri
                 color = colorSchemes[index]
             )
         }
-
     }
 }
