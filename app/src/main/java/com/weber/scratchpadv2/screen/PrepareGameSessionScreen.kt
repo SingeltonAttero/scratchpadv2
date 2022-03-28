@@ -1,6 +1,6 @@
 package com.weber.scratchpadv2.screen
 
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -12,6 +12,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.weber.scratchpadv2.R
+import com.weber.scratchpadv2.components.SelectorCounter
 
 /**
  * Предварительная настройка сессии игры
@@ -20,14 +21,16 @@ import com.weber.scratchpadv2.R
  */
 @Composable
 fun PrepareGameSessionScreen(modifier: Modifier) {
-    Box(modifier = modifier, contentAlignment = Alignment.TopCenter) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 24.dp),
+                .padding(top = 60.dp),
             text = stringResource(id = R.string.prepare_game_session_title),
             style = MaterialTheme.typography.h6,
             textAlign = TextAlign.Center
         )
+
+        SelectorCounter(Modifier)
     }
 }

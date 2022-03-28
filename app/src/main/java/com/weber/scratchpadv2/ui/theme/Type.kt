@@ -14,6 +14,12 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
+    subtitle1 = TextStyle(
+        fontWeight = FontWeight.Normal,
+        fontSize = 20.sp,
+        letterSpacing = 0.sp,
+        color = Color.White
+    ),
     h1 = TextStyle(
         fontFamily = FontFamily.Cursive,
         fontWeight = FontWeight.Bold,
