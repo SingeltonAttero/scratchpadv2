@@ -14,12 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.weber.scratchpadv2.screen.HintScreen
-import com.weber.scratchpadv2.screen.HomeScreen
-import com.weber.scratchpadv2.screen.PrepareGameSessionScreen
-import com.weber.scratchpadv2.screen.SettingScreen
+import com.weber.scratchpadv2.screen.hint.HintScreen
+import com.weber.scratchpadv2.screen.home.HomeScreen
+import com.weber.scratchpadv2.screen.prepare.PrepareGameSessionScreen
+import com.weber.scratchpadv2.screen.setting.SettingScreen
 import com.weber.scratchpadv2.ui.theme.Scratchpadv2Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         fullScreenMode()

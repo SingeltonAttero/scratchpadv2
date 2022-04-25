@@ -1,4 +1,4 @@
-package com.weber.scratchpadv2.screen
+package com.weber.scratchpadv2.screen.hint
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,16 +12,16 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 /**
- *  Экран настроек
+ *  Экран подсказок
  */
 @Composable
-fun SettingScreen(modifier: Modifier) {
+fun HintScreen(modifier: Modifier) {
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 60.dp),
-            text = "Настройки игры",
+            text = "Правила игры",
             style = MaterialTheme.typography.h6,
             textAlign = TextAlign.Center
         )

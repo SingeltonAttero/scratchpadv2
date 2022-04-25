@@ -4,4 +4,6 @@
     <string name="other_games">Другие игры</string>
     <string name="setting">Настройки</string>
     <string name="prepare_game_session_title">Подготовка к игре</string>
+    <string name="counter_player_description">Количество игроков</string>
+    <string name="counter_spy_description">Количество шпионов</string>
 </resources>

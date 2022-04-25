@@ -15,8 +15,8 @@ val Typography = Typography(
         fontSize = 16.sp
     ),
     subtitle1 = TextStyle(
-        fontWeight = FontWeight.Normal,
-        fontSize = 20.sp,
+        fontWeight = FontWeight.Light,
+        fontSize = 24.sp,
         letterSpacing = 0.sp,
         color = Color.White
     ),
@@ -36,7 +36,7 @@ val Typography = Typography(
     h6 = TextStyle(
         fontWeight = FontWeight.Normal,
         color = AppButtonTextColor,
-        fontSize = 36.sp,
+        fontSize = 32.sp,
         letterSpacing = 0.sp
     )
 )

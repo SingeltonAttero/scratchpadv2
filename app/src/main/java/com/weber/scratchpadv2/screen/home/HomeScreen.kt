@@ -1,4 +1,4 @@
-package com.weber.scratchpadv2.screen
+package com.weber.scratchpadv2.screen.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
