@@ -7,15 +7,17 @@ import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.weber.scratchpadv2.screen.HintScreen
 import com.weber.scratchpadv2.screen.HomeScreen
 import com.weber.scratchpadv2.screen.PrepareGameSessionScreen
-import com.weber.scratchpadv2.ui.theme.DarkBackgroundHomeScreen
-import com.weber.scratchpadv2.ui.theme.DarkBackgroundPrepareGame
+import com.weber.scratchpadv2.screen.SettingScreen
 import com.weber.scratchpadv2.ui.theme.Scratchpadv2Theme
 
 class MainActivity : ComponentActivity() {
@@ -30,17 +32,39 @@ class MainActivity : ComponentActivity() {
                     startDestination = ScreenDestinations.HomeScreen.name
                 ) {
                     composable(ScreenDestinations.HomeScreen.name) {
-                        Surface(color = DarkBackgroundHomeScreen) {
+                        ScreenContainer {
                             HomeScreen(navController)
                         }
                     }
                     composable(ScreenDestinations.PrepareGameSessionScreen.name) {
-                        Surface(color = DarkBackgroundPrepareGame) {
+                        ScreenContainer {
                             PrepareGameSessionScreen(modifier = Modifier.fillMaxSize())
+                        }
+                    }
+
+                    composable(ScreenDestinations.SettingScreen.name) {
+                        ScreenContainer {
+                            SettingScreen(modifier = Modifier.fillMaxSize())
+                        }
+                    }
+
+                    composable(ScreenDestinations.HintScreen.name) {
+                        ScreenContainer {
+                            HintScreen(modifier = Modifier.fillMaxSize())
                         }
                     }
                 }
             }
+        }
+    }
+
+    @Composable
+    private fun ScreenContainer(screen: @Composable () -> Unit) {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colors.background
+        ) {
+            screen.invoke()
         }
     }
 

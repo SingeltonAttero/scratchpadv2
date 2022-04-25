@@ -1,22 +1,26 @@
 package com.weber.scratchpadv2.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.KeyboardArrowRight
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -39,20 +43,33 @@ fun SelectorCounter(
             style = MaterialTheme.typography.subtitle1
         )
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(
-                modifier = Modifier
-                    .size(48.dp, 48.dp)
-                    .pointerInput(Unit) {
-                        detectTapGestures(
-                            onLongPress = {
-                            }, onPress = {
+            val interactionSource = remember { MutableInteractionSource() }
+            val buttonInteraction = interactionSource.collectIsPressedAsState()
+            val coroutineScope = rememberCoroutineScope()
+            IconButton(
+                modifier = Modifier.combinedClickable(
+                    interactionSource = interactionSource,
+                    indication = rememberRipple(),
+                    onLongClick = {
+                        coroutineScope.launch {
+                            while (!buttonInteraction.value) {
+                                delay(1000)
                                 counter--
-                            })
-                    },
-                imageVector = Icons.Default.KeyboardArrowLeft,
-                contentDescription = "",
-                tint = Color.White
-            )
+                            }
+                        }
+                    }) {},
+                onClick = {
+                 //   counter--
+                }
+            ) {
+                Icon(
+                    modifier = Modifier.size(48.dp, 48.dp),
+                    imageVector = Icons.Default.KeyboardArrowLeft,
+                    contentDescription = "",
+                    tint = Color.White
+                )
+            }
+
             Text(
                 modifier = Modifier
                     .padding(start = 8.dp, end = 8.dp),
@@ -61,16 +78,17 @@ fun SelectorCounter(
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.h6
             )
-            Icon(
-                modifier = Modifier
-                    .size(48.dp, 48.dp)
-                    .clickable {
-                        counter++
-                    },
-                imageVector = Icons.Default.KeyboardArrowRight,
-                contentDescription = "",
-                tint = Color.White
-            )
+            IconButton(onClick = {
+                counter++
+            }) {
+                Icon(
+                    modifier = Modifier.size(48.dp, 48.dp),
+                    imageVector = Icons.Default.KeyboardArrowRight,
+                    contentDescription = "",
+                    tint = Color.White
+                )
+            }
+
         }
     }
 }

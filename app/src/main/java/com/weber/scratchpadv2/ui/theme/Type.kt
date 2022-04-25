@@ -21,10 +21,10 @@ val Typography = Typography(
         color = Color.White
     ),
     h1 = TextStyle(
-        fontFamily = FontFamily.Cursive,
-        fontWeight = FontWeight.Bold,
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.Normal,
         color = Color.White,
-        fontSize = 70.sp,
+        fontSize = 48.sp,
         letterSpacing = 1.sp
     ),
     h3 = TextStyle(
