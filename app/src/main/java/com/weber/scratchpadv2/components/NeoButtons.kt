@@ -24,7 +24,8 @@ fun StartGameButton(title: String, clickable: () -> Unit = {}) {
     Surface(
         modifier = Modifier
             .padding(32.dp)
-            .neoRectangleBottomShadow(),
+            .neoRectangleBottomShadow()
+        ,
         color = MaterialTheme.colors.background,
         shape = RoundedCornerShape(12.dp)
     ) {

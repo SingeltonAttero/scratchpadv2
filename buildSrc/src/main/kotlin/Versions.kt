@@ -2,7 +2,7 @@ object Versions {
 
 
     object Tools {
-        val android_gradle by lazy { "7.1.2" }
+        val android_gradle by lazy { "7.1.3" }
         val kotlin by lazy { "1.6.10" }
         val hilt by lazy { "2.38.1" }
     }

@@ -32,7 +32,8 @@ fun NeoImageCirce(size: Dp = 275.dp) {
         Surface(
             modifier = Modifier
                 .size(size = size)
-                .neoCircleShadow(),
+                .neoCircleShadow()
+            ,
             border = NeoBorderGradient,
             color = DarkBackgroundHomeScreen,
             shape = CircleShape,
