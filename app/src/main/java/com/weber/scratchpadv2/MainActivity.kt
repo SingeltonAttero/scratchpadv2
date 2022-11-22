@@ -6,20 +6,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.weber.scratchpadv2.screen.app.ApplicationScreen
-import com.weber.scratchpadv2.screen.hint.HintScreen
-import com.weber.scratchpadv2.screen.home.HomeScreen
-import com.weber.scratchpadv2.screen.prepare.PrepareGameSessionScreen
-import com.weber.scratchpadv2.screen.setting.SettingScreen
-import com.weber.scratchpadv2.ui.theme.Scratchpadv2Theme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

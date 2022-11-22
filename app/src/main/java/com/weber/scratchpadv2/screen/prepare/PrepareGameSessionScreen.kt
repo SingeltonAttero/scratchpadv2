@@ -37,6 +37,7 @@ fun PrepareGameSessionScreen(
     modifier: Modifier,
     viewModel: PrepareGameSessionViewModel = hiltViewModel()
 ) {
+
     Column(modifier = modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         val playerState by viewModel.playerSelectorState.collectAsState()
         val spyState by viewModel.spySelectorState.collectAsState()

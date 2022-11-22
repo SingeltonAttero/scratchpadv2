@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.weber.scratchpadv2.R
@@ -20,9 +21,8 @@ import com.weber.scratchpadv2.ui.theme.DarkBackgroundHomeScreen
 /**
  * Компонент с тенями в стиле неоконформизма
  */
-
-
 @Composable
+@Preview
 fun NeoImageCirce(size: Dp = 275.dp) {
     Box(
         modifier = Modifier
@@ -32,8 +32,7 @@ fun NeoImageCirce(size: Dp = 275.dp) {
         Surface(
             modifier = Modifier
                 .size(size = size)
-                .neoCircleShadow()
-            ,
+                .neoCircleShadow(),
             border = NeoBorderGradient,
             color = DarkBackgroundHomeScreen,
             shape = CircleShape,
