@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">Статистика по работе с сетью</string>
-    <string name="ping_toolbar_title">Проверка доступности ресурсов</string>
-    <string name="input_ping_url">Введите ресурс</string>
-</resources>

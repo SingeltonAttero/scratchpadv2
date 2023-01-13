@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Статистика по работе с сетью</string>
+    <string name="ping_toolbar_title">Проверка доступности ресурсов</string>
+    <string name="input_ping_url">Введите ресурс</string>
+    <string name="top_bar_interview_title">Собеседования</string>
+    <string name="flow_topic_bottom_item_title">Направления</string>
+    <string name="report_topic_bottom_item_title">Отчет</string>
+    <string name="duration_interview">Продолжительность:</string>
+</resources>

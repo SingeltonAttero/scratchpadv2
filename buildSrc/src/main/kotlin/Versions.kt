@@ -1,8 +1,7 @@
 object Versions {
 
-
     object Tools {
-        val android_gradle by lazy { "7.1.3" }
+        val android_gradle by lazy { "7.3.1" }
         val kotlin by lazy { "1.6.10" }
         val hilt by lazy { "2.38.1" }
     }
@@ -30,9 +29,23 @@ object Versions {
         val Room by lazy { "2.4.1" }
 
         // test
-        val junit by lazy { "4.13.2" }
+        val junit4 by lazy { "4.13.2" }
+        val junit5 by lazy { "5.8.2" }
         val testExtJunit by lazy { "1.1.3" }
         val espressoCore by lazy { "3.4.0" }
+        val mockk by lazy { "1.13.3" }
+        val coroutinesTest by lazy { "1.6.4" }
+        val hamcrest: String by lazy { "2.2" }
+
+        // json
+        val kotlinxSerializationJson by lazy { "1.4.1" }
+
+        // logs
+        val timber by lazy { "5.0.1" }
+    }
+
+    object Plugins {
+        val junitPlugin by lazy { "1.8.2.1" }
     }
 
 }

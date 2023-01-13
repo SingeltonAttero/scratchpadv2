@@ -7,4 +7,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "scratchpadv2"
 include ':app'
-include ':network-app'
+include ':review-app'
+

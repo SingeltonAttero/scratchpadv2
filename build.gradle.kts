@@ -7,6 +7,13 @@ buildscript {
         classpath(ToolsPlugins.android)
         classpath(ToolsPlugins.kotlin)
         classpath(ToolsPlugins.hilt)
+        classpath(
+            kotlin(
+                ToolsPlugins.serialization.first,
+                ToolsPlugins.serialization.second
+            )
+        )
+
     }
 }
 task("clean") {
