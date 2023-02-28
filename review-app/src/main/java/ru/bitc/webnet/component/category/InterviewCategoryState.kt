@@ -18,5 +18,6 @@ enum class InterviewType(val humanTitle: String) {
     MIDDLE("Middle"),
     JUNIOR("Junior"),
     SENIOR("Senior"),
-    TEAM_LEAD("Team lead")
+    TEAM_LEAD("TeamLead"),
+    TRAINEE("Trainee")
 }

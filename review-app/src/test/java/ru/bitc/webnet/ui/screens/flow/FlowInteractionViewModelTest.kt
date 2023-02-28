@@ -10,6 +10,7 @@ import ru.bitc.webnet.BaseTest
 import ru.bitc.webnet.date.remote.mock.FlowInterviewTopicMock
 import ru.bitc.webnet.domain.FlowInterviewTopicRepository
 import ru.bitc.webnet.ui.screens.flow.mock.FlowInterviewTopicUIMock
+import kotlin.properties.Delegates
 
 internal class FlowInteractionViewModelTest : BaseTest() {
 
@@ -19,9 +20,7 @@ internal class FlowInteractionViewModelTest : BaseTest() {
         )
     }
 
-
-    private lateinit var viewModel: FlowInteractionViewModel
-
+    private var viewModel by Delegates.notNull<FlowInteractionViewModel>()
 
     @BeforeEach
     fun init() {

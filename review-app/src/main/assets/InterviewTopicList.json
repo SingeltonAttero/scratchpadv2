@@ -1,0 +1,60 @@
+{
+  "interviewTopic": [
+    {
+      "id": "1",
+      "position": "Android Developer",
+      "categoryDifficulty": "Junior",
+      "topicList": [
+        "Базовые вопросы по kotlin/java core",
+        "Базовые вопросы по android core",
+        "Вопросы по алгоритмам"
+      ],
+      "maxQuestion": 20,
+      "time": "1 часа"
+    },
+    {
+      "id": "2",
+      "position": "Android Developer",
+      "categoryDifficulty": "Middle",
+      "topicList": [
+        "Продвинутые вопросы по kotlin/java core",
+        "Продвинутые вопросы по android core",
+        "Вопросы по алгоритмам",
+        "Базовые понятия архитектуры проекта"
+      ],
+      "maxQuestion": 20,
+      "time": "1 час 30 минут"
+    },
+    {
+      "id": "3",
+      "position": "Android Developer",
+      "categoryDifficulty": "Senior",
+      "topicList": [
+        "Продвинутые вопросы по android",
+        "Продвинутые вопросы по kotlin/java",
+        "Вопросы по fit flow",
+        "Кейсы многомодульных проектов",
+        "Опыт в разных сферах разработки финтех/ретейл/медицина",
+        "Архитектура больших проектов"
+      ],
+      "maxQuestion": 15,
+      "time": "2 часа"
+    },
+    {
+      "id": "4",
+      "position": "Android Developer",
+      "categoryDifficulty": "TeamLead",
+      "topicList": [
+        "Продвинутые вопросы по процессам разработки",
+        "Организация работы команд разработки",
+        "Подходы в управление команд",
+        "Продвинутые вопросы по android",
+        "Продвинутые вопросы по kotlin/java",
+        "Вопросы по алгоритмам",
+        "Базовые понятия архитектуры проекта"
+      ],
+      "maxQuestion": 20,
+      "time": "2 часа 30 минут"
+    }
+  ]
+}

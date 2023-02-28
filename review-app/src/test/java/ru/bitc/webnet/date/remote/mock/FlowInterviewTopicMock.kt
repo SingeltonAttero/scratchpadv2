@@ -1,6 +1,9 @@
 package ru.bitc.webnet.date.remote.mock
 
 import ru.bitc.webnet.domain.entity.FlowInterviewTopic
+import ru.bitc.webnet.domain.entity.detailed.InterviewDetailed
+import ru.bitc.webnet.domain.entity.detailed.InterviewDetailedList
+import ru.bitc.webnet.domain.entity.detailed.Questions
 
 object FlowInterviewTopicMock {
 
@@ -13,9 +16,10 @@ object FlowInterviewTopicMock {
                 "Базовые вопросы по kotlin/java core",
                 "Базовые вопросы по android core",
                 "Вопросы по алгоритмам"
-            ), maxQuestion = 20, time = "2 часа"
-        ),
-        FlowInterviewTopic(
+            ),
+            maxQuestion = 20,
+            time = "2 часа"
+        ), FlowInterviewTopic(
             id = "2",
             position = "Android Developer",
             categoryDifficulty = "Middle",
@@ -30,7 +34,7 @@ object FlowInterviewTopicMock {
         )
     )
 
-    const val listInterviewTopicJsonString = """{
+    const val LIST_INTERVIEW_TOPIC_JSON_STRING = """{
   "interviewTopic": [
     {
       "id": "1",

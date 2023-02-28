@@ -12,7 +12,7 @@ class ReviewApplication : Application() {
         setupTimber()
     }
 
-    fun setupTimber() {
+    private fun setupTimber() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }

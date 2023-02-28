@@ -15,7 +15,7 @@ object Versions {
 
         // compose
         val compose by lazy { "1.1.1" }
-        val navigationCompose by lazy { "2.5.0-alpha03" }
+        val navigationCompose by lazy { "2.5.3" }
         val lifecycleRuntime by lazy { "2.4.1" }
         val activityCompose by lazy { "1.4.0" }
 

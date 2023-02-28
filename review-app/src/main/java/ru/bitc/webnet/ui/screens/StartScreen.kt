@@ -19,9 +19,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import ru.bitc.webnet.R
 import ru.bitc.webnet.Route
 import ru.bitc.webnet.ui.screens.flow.FlowInterviewScreen
+import ru.bitc.webnet.ui.screens.flow.detailed.DetailedInterviewScreen
 import ru.bitc.webnet.ui.screens.report.ReportTopicScreen
 import ru.bitc.webnet.ui.theme.ReviewStatisticsTheme
 
@@ -29,21 +31,21 @@ import ru.bitc.webnet.ui.theme.ReviewStatisticsTheme
  * Разводящий стартовый экран
  */
 @Composable
-fun MainAppScreen() {
+fun MainAppScreen(mainNavHostController: NavHostController) {
     val screensList = listOf(
         Route.BottomMenu.FlowInterview,
         Route.BottomMenu.Report
     )
-    val navHostController = rememberNavController()
+    val innerNavHostController = rememberNavController()
     Scaffold(
         content = {
             Box(modifier = Modifier.padding(bottom = it.calculateBottomPadding())) {
-                NavGraphStartScreen(navHostController)
+                NavGraphStartScreen(innerNavHostController, mainNavHostController)
             }
 
         },
         bottomBar = {
-            StartBottomBar(navHostController, screensList)
+            StartBottomBar(innerNavHostController, screensList)
         }
     )
 }
@@ -56,7 +58,8 @@ private fun StartBottomBar(
     BottomNavigation {
         val state by navController.currentBackStackEntryAsState()
         screensList.forEach {
-            val selectedItem = it.route === state?.destination?.route
+
+            val selectedItem = it.navigate === state?.destination?.route
             when (it) {
                 Route.BottomMenu.FlowInterview -> {
                     BottomItemComponent(
@@ -64,7 +67,7 @@ private fun StartBottomBar(
                         text = stringResource(R.string.flow_topic_bottom_item_title),
                         icon = Icons.Rounded.Home,
                         itemClick = {
-                            navController.navigate(Route.BottomMenu.FlowInterview.route)
+                            navController.navigate(Route.BottomMenu.FlowInterview.navigate)
                         }
                     )
                 }
@@ -74,7 +77,7 @@ private fun StartBottomBar(
                         text = stringResource(R.string.report_topic_bottom_item_title),
                         icon = Icons.Rounded.AccountBox,
                         itemClick = {
-                            navController.navigate(Route.BottomMenu.Report.route)
+                            navController.navigate(Route.BottomMenu.Report.navigate)
                         }
                     )
                 }
@@ -84,16 +87,27 @@ private fun StartBottomBar(
 }
 
 @Composable
-fun NavGraphStartScreen(navController: NavHostController) {
+fun NavGraphStartScreen(innerNavController: NavHostController, mainController: NavHostController) {
     NavHost(
-        navController = navController,
-        startDestination = Route.BottomMenu.FlowInterview.route
+        navController = innerNavController,
+        startDestination = Route.BottomMenu.FlowInterview.navigate
     ) {
-        composable(Route.BottomMenu.FlowInterview.route) {
-            FlowInterviewScreen()
+        composable(Route.BottomMenu.FlowInterview.navigate) {
+            FlowInterviewScreen(mainController)
         }
-        composable(Route.BottomMenu.Report.route) {
+        composable(Route.BottomMenu.Report.navigate) {
             ReportTopicScreen()
+        }
+
+        composable(
+            Route.DetailedInterview.navigate,
+            arguments = listOf(navArgument(Route.DetailedInterview.key) {
+                defaultValue = "0"
+            })
+        ) { navBackStackEntry ->
+            DetailedInterviewScreen(
+                interviewId = checkNotNull(navBackStackEntry.arguments?.getString(Route.DetailedInterview.key))
+            )
         }
     }
 }

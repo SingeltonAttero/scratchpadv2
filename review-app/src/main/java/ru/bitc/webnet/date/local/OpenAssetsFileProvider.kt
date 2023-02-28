@@ -9,13 +9,10 @@ import java.io.BufferedReader
 class OpenAssetsFileProvider constructor(private val resources: Resources) {
 
 
-    fun getFileJson(): String {
-        return resources.assets.open(INTERVIEW_TOPIC_JSON).bufferedReader()
+    fun getFileJson(fileName: String): String {
+        return resources.assets.open(fileName).bufferedReader()
             .use(BufferedReader::readText)
     }
 
 
-    private companion object {
-        const val INTERVIEW_TOPIC_JSON = "InterviewTopic.json"
-    }
 }

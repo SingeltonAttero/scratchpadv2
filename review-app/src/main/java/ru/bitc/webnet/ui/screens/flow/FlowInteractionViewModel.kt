@@ -46,7 +46,10 @@ class FlowInteractionViewModel @Inject constructor(private val flowInterviewRepo
     private fun convertCategoryDifficultyToType(categoryDifficulty: String): InterviewType {
         return when (categoryDifficulty) {
             InterviewType.JUNIOR.humanTitle -> InterviewType.JUNIOR
-            else -> InterviewType.TEAM_LEAD
+            InterviewType.TEAM_LEAD.humanTitle -> InterviewType.TEAM_LEAD
+            InterviewType.MIDDLE.humanTitle -> InterviewType.MIDDLE
+            InterviewType.SENIOR.humanTitle -> InterviewType.SENIOR
+            else -> InterviewType.TRAINEE
         }
     }
 

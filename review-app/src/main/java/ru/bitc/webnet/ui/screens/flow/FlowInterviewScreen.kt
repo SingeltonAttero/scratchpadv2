@@ -9,13 +9,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import ru.bitc.webnet.Route
 import ru.bitc.webnet.component.category.InterviewCategoryComponent
 
 /**
  *
  */
 @Composable
-fun FlowInterviewScreen(viewModel: FlowInteractionViewModel = hiltViewModel()) {
+fun FlowInterviewScreen(
+    mainNavHostController: NavHostController,
+    viewModel: FlowInteractionViewModel = hiltViewModel()
+) {
 
     val state = viewModel.uiState.collectAsState()
     Box(
@@ -28,12 +33,17 @@ fun FlowInterviewScreen(viewModel: FlowInteractionViewModel = hiltViewModel()) {
                 item {
                     if (index == 0) {
                         Spacer(modifier = Modifier.size(16.dp))
-
                     }
                     InterviewCategoryComponent(
                         modifier = Modifier.padding(start = 16.dp, end = 16.dp),
                         state = partState
-                    )
+                    ) {
+                        mainNavHostController.navigate(
+                            Route.DetailedInterview.openDetailed(
+                                partState.id
+                            )
+                        )
+                    }
                     Spacer(modifier = Modifier.size(16.dp))
                 }
             }
